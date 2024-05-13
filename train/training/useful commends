@@ -1,0 +1,3 @@
+conda env update -f C:\Users\michaelpiro1\PycharmProjects\pythonProject\training\environment-cuda.yml # if you have GPUs
+conda activate demucs
+pip install -e .

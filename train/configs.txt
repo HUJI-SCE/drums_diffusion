@@ -1,0 +1,43 @@
+wandb="055dd77a9574488aae64d39a2a77a6376d7b1fa5"
+csvfile
+path_to_components = '/models'
+path_to_class_file = "/inference/pipline.py"
+
+# AUDIO CONFIGS
+n_fft = 1024
+hop_length = 128
+win_length = 1024
+n_mels = 64
+target_sr = 44100
+fmax = int(target_sr/ 2)
+fmin = 0
+
+
+SAMPLE_RATE = 16000
+N_FFT = 1024
+HOP_LENGTH = 160
+WIN_LENGTH = 1024
+N_MELS = 64
+TARGET_SR = SAMPLE_RATE  # Make sure SAMPLE_RATE is defined or imported
+FMAX = int(TARGET_SR / 2)
+FMIN = 0
+AUDIO_LEN_SEC = 5
+TARGET_LENGTH = 256
+NUM_SAMPLES = (TARGET_LENGTH - 1) * HOP_LENGTH
+TARGET_LENGTH_SEC = NUM_SAMPLES / TARGET_SR
+
+# FIRST OPTION - TO DEFINE THE WANTED LENGTH OF THE SPEC WITH target_length = 1024
+target_length = 1024
+num_samples = (target_length - 1) * hop_length # BECAUSE OF THE WAY FFT IN LIBROSA WORKS
+# IF THE CENTER ARG IN THE MELSPEC FUNC IS FALSE THEN:
+    # num_samples = (target_length - 1) * hop_length + win_length
+length_in_sec = num_samples / target_sr
+
+#OTHER OPTION - TO DEFINE THE DURATION OF THE AUDIO, BUT THE SPECTOGRAM MIGHT HAVE UGLY LENGTH
+audio_len_sec = 5
+num_samples = int(audio_len_sec * target_sr)
+
+
+
+unet:
+sample_size = 32768

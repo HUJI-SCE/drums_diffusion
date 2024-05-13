@@ -1,0 +1,10 @@
+torchaudio~=2.2.1
+demucs~=4.1.0a2
+numpy~=1.26.4
+librosa~=0.10.1
+pandas~=2.2.1
+torch~=2.2.1+cu118
+diffusers~=0.27.2
+tqdm~=4.66.2
+accelerate~=0.28.0
+huggingface_hub~=0.20.3
